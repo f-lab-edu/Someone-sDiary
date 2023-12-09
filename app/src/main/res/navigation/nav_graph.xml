@@ -6,12 +6,12 @@
     app:startDestination="@id/home_fragment">
     <fragment
         android:id="@+id/home_fragment"
-        android:name="com.kova700.someonesdiary.HomeFragment"
+        android:name="com.kova700.someonesdiary.view.main.home.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/my_page_fragment"
-        android:name="com.kova700.someonesdiary.MyPageFragment"
+        android:name="com.kova700.someonesdiary.view.main.mypage.MyPageFragment"
         android:label="fragment_my_page"
         tools:layout="@layout/fragment_my_page" />
 </navigation>

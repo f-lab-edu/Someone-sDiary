@@ -1,6 +1,7 @@
-package com.kova700.someonesdiary
+package com.kova700.someonesdiary.view.main.adapter
 
 import androidx.recyclerview.widget.DiffUtil
+import com.kova700.someonesdiary.data.DiaryListItem
 
 class DiaryListItemDiffUtil : DiffUtil.ItemCallback<DiaryListItem>() {
     override fun areItemsTheSame(oldItem: DiaryListItem, newItem: DiaryListItem): Boolean {

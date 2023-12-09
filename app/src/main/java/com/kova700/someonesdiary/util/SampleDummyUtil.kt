@@ -1,4 +1,6 @@
-package com.kova700.someonesdiary
+package com.kova700.someonesdiary.util
+
+import com.kova700.someonesdiary.data.DiaryListItem
 
 fun getDummyList(): MutableList<DiaryListItem> {
     val imgUrlList = listOf(

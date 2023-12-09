@@ -1,4 +1,4 @@
-package com.kova700.someonesdiary
+package com.kova700.someonesdiary.util
 
 import android.content.Context
 import android.util.DisplayMetrics

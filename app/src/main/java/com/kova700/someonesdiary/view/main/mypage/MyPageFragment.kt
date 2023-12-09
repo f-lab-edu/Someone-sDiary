@@ -1,4 +1,4 @@
-package com.kova700.someonesdiary
+package com.kova700.someonesdiary.view.main.mypage
 
 import android.os.Bundle
 import android.view.LayoutInflater

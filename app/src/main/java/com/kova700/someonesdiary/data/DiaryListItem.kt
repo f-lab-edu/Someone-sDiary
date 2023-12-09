@@ -1,4 +1,4 @@
-package com.kova700.someonesdiary
+package com.kova700.someonesdiary.data
 
 data class DiaryListItem(
     val id: Int,

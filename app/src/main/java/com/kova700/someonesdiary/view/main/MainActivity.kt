@@ -1,4 +1,4 @@
-package com.kova700.someonesdiary
+package com.kova700.someonesdiary.view.main
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,6 +7,8 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupWithNavController
+import com.kova700.someonesdiary.view.makediary.MakeDiaryActivity
+import com.kova700.someonesdiary.R
 import com.kova700.someonesdiary.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 

@@ -1,8 +1,10 @@
-package com.kova700.someonesdiary
+package com.kova700.someonesdiary.view.main.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
+import com.kova700.someonesdiary.data.DiaryListItem
+import com.kova700.someonesdiary.R
 import com.kova700.someonesdiary.databinding.ItemDiaryBinding
 import javax.inject.Inject
 

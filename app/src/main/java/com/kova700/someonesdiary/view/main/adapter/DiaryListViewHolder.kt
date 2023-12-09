@@ -1,4 +1,4 @@
-package com.kova700.someonesdiary
+package com.kova700.someonesdiary.view.main.adapter
 
 import android.graphics.drawable.BitmapDrawable
 import androidx.core.view.marginEnd
@@ -8,7 +8,9 @@ import androidx.swiperefreshlayout.widget.CircularProgressDrawable
 import coil.ImageLoader
 import coil.load
 import coil.request.ImageRequest
+import com.kova700.someonesdiary.data.DiaryListItem
 import com.kova700.someonesdiary.databinding.ItemDiaryBinding
+import com.kova700.someonesdiary.util.getDeviceWidthPixels
 
 class DiaryListViewHolder(
     private val binding: ItemDiaryBinding,

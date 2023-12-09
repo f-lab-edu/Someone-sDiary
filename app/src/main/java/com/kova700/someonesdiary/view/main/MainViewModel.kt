@@ -1,7 +1,9 @@
-package com.kova700.someonesdiary
+package com.kova700.someonesdiary.view.main
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.kova700.someonesdiary.data.DiaryListItem
+import com.kova700.someonesdiary.util.getDummyList
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharedFlow

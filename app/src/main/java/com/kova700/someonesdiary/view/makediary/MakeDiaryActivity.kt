@@ -1,7 +1,8 @@
-package com.kova700.someonesdiary
+package com.kova700.someonesdiary.view.makediary
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.kova700.someonesdiary.R
 
 class MakeDiaryActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

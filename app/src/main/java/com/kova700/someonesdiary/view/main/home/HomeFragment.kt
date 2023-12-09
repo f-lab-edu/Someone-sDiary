@@ -1,4 +1,4 @@
-package com.kova700.someonesdiary
+package com.kova700.someonesdiary.view.main.home
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,9 +8,11 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
-import com.kova700.someonesdiary.MainViewModel.MainUiEvent
-import com.kova700.someonesdiary.MainViewModel.MoveToDetail
+import com.kova700.someonesdiary.view.main.MainViewModel
+import com.kova700.someonesdiary.view.main.MainViewModel.MainUiEvent
+import com.kova700.someonesdiary.view.main.MainViewModel.MoveToDetail
 import com.kova700.someonesdiary.databinding.FragmentHomeBinding
+import com.kova700.someonesdiary.view.main.adapter.DiaryListAdapter
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 import javax.inject.Inject
