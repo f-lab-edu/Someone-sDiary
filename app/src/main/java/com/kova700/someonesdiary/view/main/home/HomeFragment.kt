@@ -1,5 +1,6 @@
 package com.kova700.someonesdiary.view.main.home
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,10 +9,13 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import com.kova700.someonesdiary.data.DiaryListItem
+import com.kova700.someonesdiary.databinding.FragmentHomeBinding
+import com.kova700.someonesdiary.view.detail.DetailDiaryActivity
+import com.kova700.someonesdiary.view.main.MainActivity.Companion.TO_DETAIL_SELECTED_ITEM_EXTRA
 import com.kova700.someonesdiary.view.main.MainViewModel
 import com.kova700.someonesdiary.view.main.MainViewModel.MainUiEvent
 import com.kova700.someonesdiary.view.main.MainViewModel.MoveToDetail
-import com.kova700.someonesdiary.databinding.FragmentHomeBinding
 import com.kova700.someonesdiary.view.main.adapter.DiaryListAdapter
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
@@ -80,13 +84,16 @@ class HomeFragment : Fragment() {
         }
     }
 
-    private fun moveToDetail() {
-
+    private fun moveToDetail(diaryListItem: DiaryListItem) {
+        val intent = Intent(context, DetailDiaryActivity::class.java).apply {
+            putExtra(TO_DETAIL_SELECTED_ITEM_EXTRA, diaryListItem)
+        }
+        startActivity(intent)
     }
 
     private fun handleUiEvent(event: MainUiEvent) {
         when (event) {
-            is MoveToDetail -> moveToDetail()
+            is MoveToDetail -> moveToDetail(event.diaryListItem)
         }
     }
 

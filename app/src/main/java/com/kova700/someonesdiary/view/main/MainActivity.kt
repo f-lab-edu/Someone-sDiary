@@ -45,4 +45,8 @@ class MainActivity : AppCompatActivity() {
         val intent = Intent(this, MakeDiaryActivity::class.java)
         startActivity(intent)
     }
+
+    companion object {
+        const val TO_DETAIL_SELECTED_ITEM_EXTRA = "TO_DETAIL_SELECTED_ITEM_EXTRA"
+    }
 }
