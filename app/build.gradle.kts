@@ -1,3 +1,9 @@
+import java.io.FileInputStream
+import java.util.Properties
+
+var properties = Properties()
+properties.load(FileInputStream("local.properties"))
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
@@ -19,6 +25,7 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField("String", "UNSPLASH_ACCESS_KEY", properties.getProperty("UNSPLASH_ACCESS_KEY"))
     }
 
     buildTypes {
@@ -39,6 +46,7 @@ android {
     }
     buildFeatures {
         viewBinding = true
+        buildConfig = true
     }
 }
 
