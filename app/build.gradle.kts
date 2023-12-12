@@ -63,4 +63,7 @@ dependencies {
     ksp("com.google.dagger:hilt-android-compiler:2.48.1")
     // Coil
     implementation("io.coil-kt:coil:2.5.0")
+    //Retrofit
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:1.0.0")
 }
