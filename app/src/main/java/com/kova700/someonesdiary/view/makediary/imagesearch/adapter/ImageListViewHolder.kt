@@ -1,14 +1,10 @@
 package com.kova700.someonesdiary.view.makediary.imagesearch.adapter
 
-import android.graphics.drawable.BitmapDrawable
 import androidx.core.view.marginEnd
 import androidx.core.view.marginStart
 import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.CircularProgressDrawable
-import coil.ImageLoader
 import coil.load
-import coil.request.ImageRequest
-import com.kova700.someonesdiary.data.DiaryListItem
 import com.kova700.someonesdiary.data.source.unsplash.remote.Photo
 import com.kova700.someonesdiary.databinding.ItemImageSearchBinding
 import com.kova700.someonesdiary.util.getDeviceWidthPixels
@@ -25,16 +21,21 @@ class ImageListViewHolder(
         }
     }
 
-
     fun bind(photo: Photo) {
+        setViewHolderSizeToFit(photo)
+        binding.ivImageSearch.load(photo.urls.full) {
+            placeholder(circularProgressDrawable)
+        }
+    }
 
-        val circularProgressDrawable = CircularProgressDrawable(binding.root.context)
-            .apply {
-                strokeWidth = 5f
-                centerRadius = 30f
-                start()
-            }
+    private val circularProgressDrawable = CircularProgressDrawable(binding.root.context)
+        .apply {
+            strokeWidth = 5f
+            centerRadius = 30f
+            start()
+        }
 
+    private fun setViewHolderSizeToFit(photo: Photo) {
         val ratio = photo.height / photo.width.toFloat()
         val targetWidth =
             binding.root.context.getDeviceWidthPixels() / 3 - (binding.cvImageSearch.marginStart + binding.cvImageSearch.marginEnd)
@@ -50,11 +51,6 @@ class ImageListViewHolder(
                 width = targetWidth
                 height = targetHeight
             }
-
-        binding.ivImageSearch.load(photo.urls.full) {
-            placeholder(circularProgressDrawable)
-        }
-
     }
 
 }
