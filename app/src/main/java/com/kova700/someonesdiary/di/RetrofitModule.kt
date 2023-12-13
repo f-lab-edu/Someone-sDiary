@@ -65,9 +65,16 @@ object RetrofitModule {
             .addConverterFactory(converterFactory)
             .build()
 
+    private val jsonConvertFormat = Json {
+        ignoreUnknownKeys = true
+        coerceInputValues = true
+        encodeDefaults = true
+        isLenient = true
+    }
+
     @Provides
     @Singleton
     fun provideKotlinxSerializationConverterFactory(): Converter.Factory =
-        Json.asConverterFactory(JSON_MEDIA_TYPE.toMediaType())
+        jsonConvertFormat.asConverterFactory(JSON_MEDIA_TYPE.toMediaType())
 
 }
