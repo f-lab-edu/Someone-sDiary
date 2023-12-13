@@ -25,7 +25,7 @@ class ImageSearchFragment : Fragment() {
     private val makeDiaryViewModel by activityViewModels<MakeDiaryViewModel>()
 
     @Inject
-    lateinit var imageSearchListAdpater: ImageSearchListAdpater
+    lateinit var imageSearchListAdapter: ImageSearchListAdpater
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -51,14 +51,14 @@ class ImageSearchFragment : Fragment() {
 
     private fun observePhotoListFlow() = lifecycleScope.launch {
         makeDiaryViewModel.photoListFlow.collect { photoList ->
-            imageSearchListAdpater.submitList(photoList)
+            imageSearchListAdapter.submitList(photoList)
         }
     }
 
     private fun initSearchView() {
         binding.svImageSearch.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
-                query?.let { makeDiaryViewModel.currentQuery.update { it } }
+                query?.let { makeDiaryViewModel.currentQuery.update { query } }
                 return false
             }
 
@@ -69,7 +69,7 @@ class ImageSearchFragment : Fragment() {
     }
 
     private fun initAdapter() {
-        imageSearchListAdpater.apply {
+        imageSearchListAdapter.apply {
             onItemClick = { itemPosition ->
 //                makeDiaryViewModel.itemClickListener(imageSearchListAdpater.currentList[itemPosition])
             }
@@ -81,7 +81,7 @@ class ImageSearchFragment : Fragment() {
             StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.VERTICAL)
 
         binding.rcvImageSearch.apply {
-            adapter = imageSearchListAdpater
+            adapter = imageSearchListAdapter
             layoutManager = gridLayoutManager
         }
     }
