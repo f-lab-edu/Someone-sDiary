@@ -10,12 +10,13 @@ class UnsplashRepositoryImpl @Inject constructor(
     private val unsplashService: UnsplashService,
 ) : UnsplashRepository {
 
-    override fun getPhotoList(query: String, page: Int): Flow<List<Photo>> =
-        flow {
-            unsplashService.getPhoto(
+    override fun getPhotoList(query: String, page: Int): Flow<List<Photo>> {
+        return flow {
+            val response = unsplashService.getPhoto(
                 query = query,
                 page = page
             )
+            emit(response.results)
         }
-
+    }
 }
