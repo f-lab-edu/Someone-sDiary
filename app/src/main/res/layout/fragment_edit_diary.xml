@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1F2E31">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_start_edit_diary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="15dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_end_edit_diary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="15dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_top_edit_diary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="20dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_middle_edit_diary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <ImageView
+        android:id="@+id/iv_cover_img_edit_diary"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="fitXY"
+        android:background="#D9D9D9"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintBottom_toTopOf="@+id/guideline_middle_edit_diary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <!--일기 내용 길면 스크롤 가능해야함-->
+    <!--+ 버튼, 하루 하나 일기 Text 그룹으로 묶어서 Visibility 설정-->
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/hakgyoansim_doldam"
+        android:text="@string/top_message_edit_diary"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        android:gravity="center"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_end_edit_diary"
+        app:layout_constraintStart_toStartOf="@+id/guideline_start_edit_diary"
+        app:layout_constraintTop_toTopOf="@+id/guideline_top_edit_diary" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_plus_white"
+        app:layout_constraintBottom_toTopOf="@+id/guideline_middle_edit_diary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/middle_tool_bar_edit_diary"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:background="#0E1717"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline_middle_edit_diary"/>
+
+    <!--중복 클릭 방지 해야함-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/registration"
+        android:textColor="#FFFFFF"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_marginEnd="10dp"
+        android:foreground="?android:attr/selectableItemBackground"
+        app:layout_constraintBottom_toBottomOf="@+id/middle_tool_bar_edit_diary"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_end_edit_diary"
+        app:layout_constraintTop_toTopOf="@+id/guideline_middle_edit_diary"/>
+
+    <!--최대 글자 수 지정, 한 줄만 가능하게 설정-->
+    <EditText
+        android:id="@+id/et_title_edit_diary"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:fontFamily="@font/hakgyoansim_doldam"
+        android:hint="@string/title"
+        android:layout_marginTop="7dp"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        android:textSize="23sp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_end_edit_diary"
+        app:layout_constraintStart_toStartOf="@+id/guideline_start_edit_diary"
+        app:layout_constraintTop_toBottomOf="@+id/middle_tool_bar_edit_diary" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="#FFFFFF"
+        android:layout_marginTop="7dp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_end_edit_diary"
+        app:layout_constraintStart_toEndOf="@+id/guideline_start_edit_diary"
+        app:layout_constraintTop_toBottomOf="@+id/et_title_edit_diary" />
+
+    <EditText
+        android:id="@+id/et_contents_edit_diary"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/hakgyoansim_doldam"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        android:textSize="23sp"
+        android:hint="@string/contents"
+        android:background="@null"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_end_edit_diary"
+        app:layout_constraintStart_toStartOf="@+id/guideline_start_edit_diary"
+        app:layout_constraintTop_toBottomOf="@+id/et_title_edit_diary" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

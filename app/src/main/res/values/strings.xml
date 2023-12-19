@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">SomeonesDiary</string>
+    <string name="home_title_someones_diary">누군가의 일기장</string>
+    <string name="title">제목</string>
+    <string name="contents">내용</string>
+    <string name="registration">등록</string>
+    <string name="top_message_edit_diary">하루에 하나의 일기만 \n작성할 수 있어요!</string>
+    <string name="search_query_hint_image_search">이미지 키워드를 입력해주세요.</string>
 </resources>

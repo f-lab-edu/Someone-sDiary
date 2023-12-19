@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <dimen name="m3_comp_navigation_bar_container_height" tools:override="true">70dp</dimen>
+    <dimen name="design_bottom_navigation_margin" tools:override="true">3dp</dimen>
+    <dimen name="design_bottom_navigation_text_size" tools:override="true">13sp</dimen>
+    <dimen name="design_bottom_navigation_active_text_size" tools:override="true">14sp</dimen>
+</resources>

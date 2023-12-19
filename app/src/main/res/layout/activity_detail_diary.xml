@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.detail.DetailDiaryActivity"
+    android:background="#1F2E31">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_start_detail_diary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="15dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_end_detail_diary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="15dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_middle_detail_diary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
+    <!--메인 화면처럼 모션 레이아웃 넣고-->
+    <!--일기 내용 길면 스크롤 가능해야함-->
+    <!--본 사람 수 , 좋아요 수 추가-->
+    <!--내가 쓴 글이라면 삭제, 수정 버튼 추가-->
+    <ImageView
+        android:id="@+id/iv_cover_img_detail_diary"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toTopOf="@+id/guideline_middle_detail_diary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/middle_tool_bar_detail_diary"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:background="#0E1717"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline_middle_detail_diary"/>
+
+    <ImageButton
+        android:id="@+id/ib_delete_detail_diary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_delete"
+        android:background="?android:selectableItemBackgroundBorderless"
+        app:layout_constraintBottom_toBottomOf="@+id/middle_tool_bar_detail_diary"
+        app:layout_constraintStart_toStartOf="@+id/guideline_start_detail_diary"
+        app:layout_constraintTop_toTopOf="@+id/guideline_middle_detail_diary" />
+
+    <ImageButton
+        android:id="@+id/ib_fix_detail_diary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:background="?android:selectableItemBackgroundBorderless"
+        android:src="@drawable/ic_fix"
+        app:layout_constraintBottom_toBottomOf="@+id/middle_tool_bar_detail_diary"
+        app:layout_constraintStart_toEndOf="@+id/ib_delete_detail_diary"
+        app:layout_constraintTop_toTopOf="@+id/guideline_middle_detail_diary" />
+
+    <ImageView
+        android:id="@+id/iv_viewer_detail_diary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="5dp"
+        android:background="?android:selectableItemBackgroundBorderless"
+        android:src="@drawable/ic_viewer"
+        app:layout_constraintBottom_toBottomOf="@+id/middle_tool_bar_detail_diary"
+        app:layout_constraintEnd_toStartOf="@+id/tv_viewer_count_detail_diary"
+        app:layout_constraintTop_toTopOf="@+id/guideline_middle_detail_diary" />
+
+    <TextView
+        android:id="@+id/tv_viewer_count_detail_diary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1054"
+        android:layout_marginRight="5dp"
+        android:textColor="#FFFFFF"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/middle_tool_bar_detail_diary"
+        app:layout_constraintEnd_toStartOf="@+id/tb_heart_detail_diary"
+        app:layout_constraintTop_toTopOf="@+id/guideline_middle_detail_diary" />
+
+    <ToggleButton
+        android:id="@+id/tb_heart_detail_diary"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginRight="5dp"
+        android:background="@drawable/selector_blue_heart"
+        android:src="@drawable/ic_viewer"
+        android:textOff=""
+        android:textOn=""
+        app:layout_constraintBottom_toBottomOf="@+id/middle_tool_bar_detail_diary"
+        app:layout_constraintEnd_toStartOf="@+id/tv_heart_count_detail_diary"
+        app:layout_constraintTop_toTopOf="@+id/guideline_middle_detail_diary" />
+
+    <TextView
+        android:id="@+id/tv_heart_count_detail_diary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="50"
+        android:textColor="#FFFFFF"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/middle_tool_bar_detail_diary"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_end_detail_diary"
+        app:layout_constraintTop_toTopOf="@+id/guideline_middle_detail_diary" />
+
+    <TextView
+        android:id="@+id/tv_title_detail_diary"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/hakgyoansim_doldam"
+        android:textColor="#FFFFFF"
+        android:textSize="23sp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_end_detail_diary"
+        app:layout_constraintStart_toStartOf="@+id/guideline_start_detail_diary"
+        app:layout_constraintTop_toBottomOf="@+id/middle_tool_bar_detail_diary" />
+
+    <TextView
+        android:id="@+id/tv_contents_detail_diary"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/hakgyoansim_doldam"
+        android:textColor="#FFFFFF"
+        android:textSize="23sp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_end_detail_diary"
+        app:layout_constraintStart_toStartOf="@+id/guideline_start_detail_diary"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_detail_diary" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
